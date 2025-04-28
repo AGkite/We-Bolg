@@ -1,0 +1,25 @@
+spring:
+  profiles:
+    active: dev
+  servlet:
+    multipart:
+      max-file-size: 10MB # 限制单个上传文件的最大大小为 10MB。如果上传的文件大小超过这个值，将会被拒绝上传。
+      max-request-size: 10MB # 限制整个上传请求的最大大小为 10MB。这包括所有上传文件的大小之和。如果请求总大小超过这个值，将会被拒绝。
+    #jackson:
+    #设置后台返参，若字段值为null,则不返回
+    #default-property-inclusion: non_null
+    #设置日期字段格式
+    #data-format: yyyy-MM-dd HH:mm:ss
+
+#JWT
+jwt:
+  # 签发人
+  issuer: newone
+  #私钥
+  secret: JoimbuePy0ARWdQQ5GwUu7EinRIZS7v1GiNMKiYXLK/VeGsqqRRQxGuyp5l17gX/2C61pLMIByJQtAIguI7kZA==
+  # token 过期时间（单位：分钟） 24*60
+  tokenExpireTime: 1440
+  # token 请求头中的 key 值
+  tokenHeaderKey: Authorization
+  # token 请求头中的 value 值前缀
+  tokenPrefix: Bearer
